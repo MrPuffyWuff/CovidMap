@@ -2,7 +2,7 @@ lat = open("latitude.csv", "r")
 output = open("cordinates.txt","w")
 
 lat.readline()
-outLine = "var dataPoints = [\n"
+output.write("var dataPoints = [\n")
 
 for line in lat:
     addend = "{x:"
@@ -21,7 +21,9 @@ for line in lat:
         if countryName in line2:
             xVal = line2.split(",")[-1]
             xVal = xVal.replace("\n", "")
-            addend += xVal + "},\n"
-            outLine += addend
-
-print(outLine)
+            addend += xVal
+            addend += ", name:\"" + countryName
+            addend += "\"},\n"
+            output.write(addend)
+            break
+output.write("]")

@@ -15,10 +15,11 @@ body {
     vertical-align: middle;
   }
   .chart {
-    /* left: 50%;
-    transform: translate(50%, 0%); */
+    left: 50%;
+    transform: translate(50%, 0%);
     width: 750px;
     text-align: center;
     vertical-align: middle;
-    float: left;
+    display: inline-block;
+    
   }
